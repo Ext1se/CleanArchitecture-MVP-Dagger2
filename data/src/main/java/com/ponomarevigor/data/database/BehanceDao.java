@@ -5,11 +5,11 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
-import com.ponomarevigor.data.model.project.Cover;
-import com.ponomarevigor.data.model.project.Owner;
-import com.ponomarevigor.data.model.project.Project;
-import com.ponomarevigor.data.model.user.Image;
-import com.ponomarevigor.data.model.user.User;
+import com.ponomarevigor.domain.model.project.Cover;
+import com.ponomarevigor.domain.model.project.Owner;
+import com.ponomarevigor.domain.model.project.Project;
+import com.ponomarevigor.domain.model.user.Image;
+import com.ponomarevigor.domain.model.user.User;
 
 import java.util.List;
 

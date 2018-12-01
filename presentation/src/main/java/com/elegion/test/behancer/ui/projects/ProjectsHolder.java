@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.elegion.test.behancer.R;
-import com.ponomarevigor.data.model.project.Project;
+import com.ponomarevigor.domain.model.project.Project;
 import com.elegion.test.behancer.utils.DateUtils;
 import com.squareup.picasso.Picasso;
 

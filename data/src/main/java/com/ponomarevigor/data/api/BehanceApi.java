@@ -1,7 +1,7 @@
 package com.ponomarevigor.data.api;
 
-import com.ponomarevigor.data.model.project.ProjectResponse;
-import com.ponomarevigor.data.model.user.UserResponse;
+import com.ponomarevigor.domain.model.project.ProjectResponse;
+import com.ponomarevigor.domain.model.user.UserResponse;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;

@@ -4,6 +4,7 @@ import android.arch.persistence.room.Room;
 
 import com.elegion.test.behancer.AppDelegate;
 import com.ponomarevigor.data.Storage;
+import com.ponomarevigor.data.database.BehanceDao;
 import com.ponomarevigor.data.database.BehanceDatabase;
 
 import javax.inject.Singleton;
@@ -27,11 +28,21 @@ public class AppModule {
 
     @Provides
     @Singleton
-    Storage provideStorage() {
-        BehanceDatabase database = Room.databaseBuilder(mApp, BehanceDatabase.class, "behance_database")
+    BehanceDatabase provideBehanceDatabase() {
+        return Room.databaseBuilder(mApp, BehanceDatabase.class, "behance_database")
                 .fallbackToDestructiveMigration()
                 .build();
+    }
 
-        return new Storage(database.getBehanceDao());
+    @Provides
+    @Singleton
+    BehanceDao provideBehanceDao(BehanceDatabase database) {
+        return database.getBehanceDao();
+    }
+
+    @Provides
+    @Singleton
+    Storage provideStorage(BehanceDao behanceDao) {
+        return new Storage(behanceDao);
     }
 }

@@ -1,4 +1,4 @@
-package com.ponomarevigor.data.model.user;
+package com.ponomarevigor.domain.model.user;
 
 import com.google.gson.annotations.SerializedName;
 

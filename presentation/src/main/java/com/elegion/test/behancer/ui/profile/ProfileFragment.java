@@ -17,7 +17,7 @@ import com.elegion.test.behancer.R;
 import com.elegion.test.behancer.common.PresenterFragment;
 import com.elegion.test.behancer.common.RefreshOwner;
 import com.elegion.test.behancer.common.Refreshable;
-import com.ponomarevigor.data.model.user.User;
+import com.ponomarevigor.domain.model.user.User;
 import com.elegion.test.behancer.di.module.ProfileFragmentModule;
 import com.elegion.test.behancer.utils.DateUtils;
 import com.squareup.picasso.Picasso;

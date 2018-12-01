@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.elegion.test.behancer.R;
-import com.ponomarevigor.data.model.project.Project;
+import com.ponomarevigor.domain.model.project.Project;
 
 import java.util.ArrayList;
 import java.util.List;

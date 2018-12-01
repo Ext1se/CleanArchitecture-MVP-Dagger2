@@ -1,4 +1,4 @@
-package com.ponomarevigor.data.model.project;
+package com.ponomarevigor.domain.model.project;
 
 import com.google.gson.annotations.SerializedName;
 

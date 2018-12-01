@@ -4,17 +4,19 @@ import com.elegion.test.behancer.di.module.AppModule;
 import com.elegion.test.behancer.di.module.NetworkModule;
 import com.elegion.test.behancer.di.module.ProfileFragmentModule;
 import com.elegion.test.behancer.di.module.ProjectsFragmentModule;
+import com.elegion.test.behancer.di.module.RepositoryModule;
 import com.elegion.test.behancer.ui.profile.ProfileFragment;
 import com.elegion.test.behancer.ui.profile.ProfilePresenter;
 import com.elegion.test.behancer.ui.projects.ProjectsFragment;
 import com.elegion.test.behancer.ui.projects.ProjectsPresenter;
+import com.ponomarevigor.domain.repository.ProjectRepository;
 
 import javax.inject.Singleton;
 
 import dagger.Component;
 
 @Singleton
-@Component(modules = {AppModule.class, NetworkModule.class})
+@Component(modules = {AppModule.class, NetworkModule.class, RepositoryModule.class})
 public interface AppComponent {
     ProfileFragmentSubComponent plusProfileFragment(ProfileFragmentModule module);
     ProjectsFragmentSubComponent plusProjectsFragment(ProjectsFragmentModule module);
