@@ -3,9 +3,8 @@ package com.elegion.test.behancer.ui.profile;
 import com.arellomobile.mvp.InjectViewState;
 import com.elegion.test.behancer.AppDelegate;
 import com.elegion.test.behancer.common.BasePresenter;
-import com.ponomarevigor.data.Storage;
 import com.ponomarevigor.data.api.BehanceApi;
-import com.elegion.test.behancer.utils.ApiUtils;
+import com.ponomarevigor.domain.ApiUtils;
 
 import javax.inject.Inject;
 
@@ -16,8 +15,6 @@ import io.reactivex.schedulers.Schedulers;
 public class ProfilePresenter extends BasePresenter<ProfileView> {
 
     @Inject
-    Storage mStorage;
-    @Inject
     BehanceApi mApi;
 
     public ProfilePresenter() {
@@ -25,7 +22,7 @@ public class ProfilePresenter extends BasePresenter<ProfileView> {
     }
 
     public void getProfile(String username) {
-        mCompositeDisposable.add(mApi.getUserInfo(username)
+       /* mCompositeDisposable.add(mApi.getUserInfo(username)
                 .subscribeOn(Schedulers.io())
                 .doOnSuccess(response -> {
                     mNetworkConnection = true;
@@ -46,6 +43,6 @@ public class ProfilePresenter extends BasePresenter<ProfileView> {
                 })
                 .subscribe(
                         response -> getViewState().showProfile(response.getUser()),
-                        throwable -> getViewState().showError()));
+                        throwable -> getViewState().showError()));*/
     }
 }

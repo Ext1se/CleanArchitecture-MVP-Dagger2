@@ -8,10 +8,10 @@ import io.reactivex.Single;
 
 public interface ProjectRepository {
 
-    public static final String PROJECT_SERVER = "PROJECT_SERVER";
-    public static final String PROJECT_DB = "PROJECT_DB";
+    String PROJECT_SERVER = "PROJECT_SERVER";
+    String PROJECT_DB = "PROJECT_DB";
 
-    Single<List<Project>> getProject();
+    Single<List<Project>> getProjects();
 
-    void insertProject(List<Project> projects);
+    void insertProjects(List<Project> projects);
 }

@@ -6,8 +6,8 @@ import io.reactivex.Single;
 
 public interface ProfileRepository {
 
-    public static final String PROFILE_SERVER = "PROFILE_SERVER";
-    public static final String PROFILE_DB = "PROFILE_DB";
+    String PROFILE_SERVER = "PROFILE_SERVER";
+    String PROFILE_DB = "PROFILE_DB";
 
     public Single<User> getUser(String username);
 

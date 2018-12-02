@@ -1,4 +1,4 @@
-package com.elegion.test.behancer.utils;
+package com.ponomarevigor.domain;
 
 import java.net.ConnectException;
 import java.net.SocketTimeoutException;

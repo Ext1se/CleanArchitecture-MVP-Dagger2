@@ -23,7 +23,7 @@ public class ProjectServerRepository implements ProjectRepository {
     }
 
     @Override
-    public Single<List<Project>> getProject() {
+    public Single<List<Project>> getProjects() {
         return mApi.getProjects(BuildConfig.API_QUERY).map(new Function<ProjectResponse, List<Project>>() {
             @Override
             public List<Project> apply(ProjectResponse projectResponse) throws Exception {
@@ -33,7 +33,7 @@ public class ProjectServerRepository implements ProjectRepository {
     }
 
     @Override
-    public void insertProject(List<Project> projects) {
+    public void insertProjects(List<Project> projects) {
         //
     }
 }

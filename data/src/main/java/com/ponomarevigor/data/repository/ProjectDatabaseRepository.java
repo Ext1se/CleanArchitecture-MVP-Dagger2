@@ -30,7 +30,7 @@ public class ProjectDatabaseRepository implements ProjectRepository {
     }
 
     @Override
-    public Single<List<Project>> getProject() {
+    public Single<List<Project>> getProjects() {
         return Single.fromCallable(new Callable<List<Project>>() {
             @Override
             public List<Project> call() throws Exception {
@@ -45,7 +45,7 @@ public class ProjectDatabaseRepository implements ProjectRepository {
     }
 
     @Override
-    public void insertProject(List<Project> projects) {
+    public void insertProjects(List<Project> projects) {
         mBehanceDao.clearProjectTable();
         mBehanceDao.insertProjects(projects);
 
