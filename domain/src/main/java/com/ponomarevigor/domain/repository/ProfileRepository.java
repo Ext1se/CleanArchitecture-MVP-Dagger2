@@ -9,7 +9,6 @@ public interface ProfileRepository {
     String PROFILE_SERVER = "PROFILE_SERVER";
     String PROFILE_DB = "PROFILE_DB";
 
-    public Single<User> getUser(String username);
-
-    public void insertUser(User user);
+    Single<User> getUser(String username);
+    void insertUser(User user);
 }

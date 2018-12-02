@@ -9,6 +9,5 @@ import io.reactivex.Single;
 public interface ProjectService {
 
     Single<List<Project>> getProject();
-
     void insertProject(List<Project> projects);
 }

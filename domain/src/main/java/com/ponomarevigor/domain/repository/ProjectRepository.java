@@ -12,6 +12,5 @@ public interface ProjectRepository {
     String PROJECT_DB = "PROJECT_DB";
 
     Single<List<Project>> getProjects();
-
     void insertProjects(List<Project> projects);
 }

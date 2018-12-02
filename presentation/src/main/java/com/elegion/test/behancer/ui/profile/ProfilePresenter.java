@@ -5,6 +5,7 @@ import com.elegion.test.behancer.AppDelegate;
 import com.elegion.test.behancer.common.BasePresenter;
 import com.ponomarevigor.data.api.BehanceApi;
 import com.ponomarevigor.domain.ApiUtils;
+import com.ponomarevigor.domain.service.ProfileService;
 
 import javax.inject.Inject;
 
@@ -15,26 +16,16 @@ import io.reactivex.schedulers.Schedulers;
 public class ProfilePresenter extends BasePresenter<ProfileView> {
 
     @Inject
-    BehanceApi mApi;
+    ProfileService mService;
 
     public ProfilePresenter() {
         AppDelegate.getAppComponent().inject(this);
     }
 
     public void getProfile(String username) {
-       /* mCompositeDisposable.add(mApi.getUserInfo(username)
-                .subscribeOn(Schedulers.io())
-                .doOnSuccess(response -> {
-                    mNetworkConnection = true;
-                    mStorage.insertUser(response);
-                })
-                .onErrorReturn(throwable -> {
-                    mNetworkConnection = false;
-                    if (ApiUtils.NETWORK_EXCEPTIONS.contains(throwable.getClass())) {
-                        return mStorage.getUser(username);
-                    }
-                    return null;
-                })
+       mCompositeDisposable.add(
+               mService.getUser(username)
+                //.doAfterSuccess(response -> mNetworkConnection = true)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(disposable -> getViewState().showRefresh())
                 .doFinally(() -> {
@@ -42,7 +33,7 @@ public class ProfilePresenter extends BasePresenter<ProfileView> {
                     getViewState().showMessage(mNetworkConnection);
                 })
                 .subscribe(
-                        response -> getViewState().showProfile(response.getUser()),
-                        throwable -> getViewState().showError()));*/
+                        response -> getViewState().showProfile(response),
+                        throwable -> getViewState().showError()));
     }
 }
