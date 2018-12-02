@@ -29,16 +29,11 @@ public class ProjectsPresenter extends BasePresenter<ProjectsView> {
     }
 
     public void getProjects() {
-        mNetworkConnection = false;
         mCompositeDisposable.add(
                 mService.getProject()
-                .doAfterSuccess(response -> mNetworkConnection = true)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(disposable -> getViewState().showRefresh())
-                .doFinally(() -> {
-                    getViewState().hideRefresh();
-                    getViewState().showMessage(mNetworkConnection);
-                })
+                .doFinally(() -> getViewState().hideRefresh())
                 .subscribe(
                         response -> getViewState().showProjects(response),
                         throwable -> getViewState().showError()));

@@ -139,13 +139,6 @@ public class ProjectsFragment extends PresenterFragment
     }
 
     @Override
-    public void showMessage(boolean networkConnection) {
-        if (!networkConnection) {
-            Toast.makeText(getContext(), R.string.network_error, Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
     public void showError() {
         mErrorView.setVisibility(View.VISIBLE);
         mRecyclerView.setVisibility(View.GONE);

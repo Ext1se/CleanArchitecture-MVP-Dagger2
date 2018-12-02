@@ -11,7 +11,5 @@ public interface BaseView extends MvpView{
 
     void hideRefresh();
 
-    void showMessage(boolean networkConnection);
-
     void showError();
 }

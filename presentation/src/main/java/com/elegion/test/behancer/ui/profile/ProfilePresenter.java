@@ -25,13 +25,9 @@ public class ProfilePresenter extends BasePresenter<ProfileView> {
     public void getProfile(String username) {
        mCompositeDisposable.add(
                mService.getUser(username)
-                //.doAfterSuccess(response -> mNetworkConnection = true)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(disposable -> getViewState().showRefresh())
-                .doFinally(() -> {
-                    getViewState().hideRefresh();
-                    getViewState().showMessage(mNetworkConnection);
-                })
+                .doFinally(() -> getViewState().hideRefresh())
                 .subscribe(
                         response -> getViewState().showProfile(response),
                         throwable -> getViewState().showError()));
